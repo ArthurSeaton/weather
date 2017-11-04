@@ -7,7 +7,7 @@ import {
 const initialState = {
   isFetching: false,
   isError: false,
-  weather: {}
+  weather: undefined
 };
 
 const rootReducer = (state = initialState, action) => {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Weather from '../../components/Weather';
 import fetchWeather from '../../actions/fetch';
 
 class WeatherApp extends Component {
@@ -24,9 +25,7 @@ class WeatherApp extends Component {
 
   renderWeather() {
     const { weather } = this.props;
-    return (
-      <div>Weather goes here</div>
-    );
+    return weather && (<Weather weather={weather} />);
   }
 
   render() {
