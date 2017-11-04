@@ -1,8 +1,15 @@
 import React from 'react';
 
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
+import 'react-tabs/style/react-tabs.css';
+
 const Forecast = ({ forecast }) => {
   return (
-    <div>Forecast in here...</div>
+    <Tabs>
+      <TabList>
+      </TabList>
+    </Tabs>
   );
 };
 
