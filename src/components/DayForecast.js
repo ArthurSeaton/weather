@@ -13,7 +13,7 @@ const DayForecast = ({ timeForecasts }) => {
   const rows = stripeObjects(timeForecasts, properties, headers);
   return (
     <div className="table">
-      {rows.map((cells, rowIndex) => (<Row cells={cells} rowIndex={rowIndex}></Row>))}
+      { rows.map((cells, rowIndex) => (<Row cells={cells} rowIndex={rowIndex}></Row>)) }
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Time from './Time';
 import Header from './Header';
@@ -31,6 +32,12 @@ const Cell = ({ data, rowIndex, colIndex }) => {
   return (
     <div className={classes}><Component data={data} /></div>
   );
+};
+
+Cell.propTypes = {
+  data: PropTypes.object.isRequired,
+  rowIndex: PropTypes.number.isRequired,
+  colIndex: PropTypes.number.isRequired
 };
 
 export default Cell;
