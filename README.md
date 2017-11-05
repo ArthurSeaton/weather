@@ -20,6 +20,8 @@ To run the tests after installing, from the root dir:
 
 * `npm run test`
 
+Note that by default Jest only runs tests that have been created since the last commit. In this case there won't be any. To run all the existing tests follow the on-screen instructions and type `a` and Jest will run all the existing tests.
+
 To build locally, from the root dir:
 
 * `npm run build`
