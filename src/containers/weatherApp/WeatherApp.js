@@ -32,7 +32,7 @@ class WeatherApp extends Component {
     const { isError, isFetching, weather } = this.props;
     return (
       <div>
-        { isError && this.renderLoadingError() }
+        { isError && this.renderError() }
         { isFetching && this.renderLoading() }
         { !isError && !isFetching && this.renderWeather(weather) }
       </div>
