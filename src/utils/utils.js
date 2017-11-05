@@ -20,6 +20,11 @@ const assignToDay = (timeForecast, days) => {
   return days.set(day, forecasts);
 };
 
+export const getTime = (dateTime) => {
+  const [hours, mins] = dateTime.split(' ')[1].split(':');
+  return `${hours}:${mins}`;
+};
+
 /**
  * Use a Map to guarantee the iteration order. Map keys are the date, map
  * values are an array of forecasts for that date.

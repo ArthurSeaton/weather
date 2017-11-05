@@ -22,8 +22,10 @@ const fetchWeather = () =>
   (dispatch) => {
     dispatch(requestWeather());
     return fetchOpenWeather()
-      .then(weather => dispatch(receiveWeather(weather)))
-      .catch(error => dispatch(fetchError(error)));
+      .then(
+        weather => dispatch(receiveWeather(weather)),
+        error => dispatch(fetchError(error))
+      );
   };
 
 export default fetchWeather;

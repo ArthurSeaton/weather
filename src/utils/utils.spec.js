@@ -1,12 +1,12 @@
-import { stripeObjects } from './utils';
+import { getTime, stripeObjects } from './utils';
 
-it('should return an empty array if there are no objects', () => {
+it('stripeObjects should return an empty array if there are no objects', () => {
   const result = stripeObjects([], [], []);
 
   expect(result).toHaveLength(0);
 });
 
-it('should return an empty array if there are no properties defined', () => {
+it('stripeObjects should return an empty array if there are no properties defined', () => {
   const objects = [{ a: 10 }, { a: 20 }];
   const props = [];
   const headers = [];
@@ -16,7 +16,7 @@ it('should return an empty array if there are no properties defined', () => {
   expect(result).toHaveLength(0);
 });
 
-it('should return an array sized the same as the properties input', () => {
+it('stripeObjects should return an array sized the same as the properties input', () => {
   const objects = [{ a: 10, b: '2' }, { a: 20, b: 'b2' }];
   const props = ['a'];
 
@@ -25,7 +25,7 @@ it('should return an array sized the same as the properties input', () => {
   expect(result).toHaveLength(props.length);
 });
 
-it('should return undefined for properties that are not found', () => {
+it('stripeObjects should return undefined for properties that are not found', () => {
   const objects = [{ a: 10 }, { a: 20 }];
   const props = ['b'];
   const expected = [undefined, undefined, undefined];
@@ -36,7 +36,7 @@ it('should return undefined for properties that are not found', () => {
   expect(result[0]).toEqual(expected);
 });
 
-it('should add the row headers as the initial row item', () => {
+it('stripeObjects should add the row headers as the initial row item', () => {
   const objects = [{ a: 1, b: 1 }, { a: 1, b: 1}];
   const props = ['a', 'b'];
   const headers = ['Header for A', 'Headers for B'];
@@ -47,7 +47,7 @@ it('should add the row headers as the initial row item', () => {
   expect(result[1][0]).toEqual(headers[1]);
 });
 
-it('should extract the named properties from the objects and stripe them into rows', () => {
+it('stripeObjects should extract the named properties from the objects and stripe them into rows', () => {
   const objects = [{ a: 10, b: 'b1' }, { a: 20, b: 'b2' }];
   const props = ['a', 'b'];
   const headers = ['a', 'b'];
@@ -59,4 +59,10 @@ it('should extract the named properties from the objects and stripe them into ro
   const result = stripeObjects(objects, props, headers);
 
   expect(result).toEqual(expected);
+});
+
+it('getTime should return the time part of a date time minus the seconds', () => {
+  const result = getTime('2017-01-01 12:30:00');
+
+  expect(result).toEqual('12:30');
 });

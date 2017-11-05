@@ -1,0 +1,9 @@
+.cell {
+  width: 12.5%;
+  padding: 3px 5px 3px 5px;
+  text-align: center;
+}
+
+.header {
+  font-weight: bold;
+}
