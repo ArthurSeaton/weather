@@ -7,3 +7,7 @@
 .header {
   font-weight: bold;
 }
+
+.col-header {
+  text-align: left;
+}
