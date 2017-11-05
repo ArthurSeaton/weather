@@ -2,6 +2,7 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import DayForecast from './DayForecast';
+import Day from './Day';
 
 import { groupByDay } from '../utils/utils';
 
@@ -12,7 +13,7 @@ const createDayPanels = (forecastByDay) =>
     .map(fc => (<TabPanel><DayForecast timeForecasts={fc}></DayForecast></TabPanel>));
 
 const createDayTabs = (days) =>
-  days.map(day => (<Tab>{day}</Tab>));
+  days.map(day => (<Tab><Day day={day} /></Tab>));
 
 const Forecast = ({ forecast }) => {
   const forecastByDay = groupByDay(forecast);
