@@ -4,14 +4,12 @@ import PropTypes from 'prop-types';
 import Time from './Time';
 import Header from './Header';
 import Summary from './Summary';
+import Temperature from './Temperature';
+import Wind from './Wind';
 
 import './Cell.css';
 
-const Render = () => (
-  <div>Cell data</div>
-);
-
-const components = [Time, Summary, Render, Render];
+const components = [Time, Summary, Temperature, Wind];
 
 const getClasses = (rowIndex, colIndex) => {
   let classes = 'cell';
