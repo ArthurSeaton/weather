@@ -6,7 +6,7 @@ import './Row.css';
 
 const Row = ({ cells, rowIndex }) =>(
   <div className="row">
-    { cells.map((cell, colIndex) => (<Cell data={cell} rowIndex={rowIndex} colIndex={colIndex} />)) }
+    { cells.map((cell, colIndex) => (<Cell data={cell} rowIndex={rowIndex} colIndex={colIndex} key={colIndex}/>)) }
   </div>
 );
 

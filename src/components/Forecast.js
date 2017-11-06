@@ -9,11 +9,11 @@ import { groupByDay } from '../utils/utils';
 import 'react-tabs/style/react-tabs.css';
 
 const createDayPanels = (forecastByDay) =>
-  Array.from(forecastByDay.values())
-    .map(fc => (<TabPanel><DayForecast timeForecasts={fc}></DayForecast></TabPanel>));
+  Array.from(forecastByDay.entries())
+    .map(([day, fc]) => (<TabPanel key={day}><DayForecast timeForecasts={fc}></DayForecast></TabPanel>));
 
 const createDayTabs = (days) =>
-  days.map(day => (<Tab><Day day={day} /></Tab>));
+  days.map(day => (<Tab key={day}><Day day={day} /></Tab>));
 
 const Forecast = ({ forecast }) => {
   const forecastByDay = groupByDay(forecast);

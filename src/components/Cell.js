@@ -34,7 +34,11 @@ const Cell = ({ data, rowIndex, colIndex }) => {
 };
 
 Cell.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+    PropTypes.array
+    ]).isRequired,
   rowIndex: PropTypes.number.isRequired,
   colIndex: PropTypes.number.isRequired
 };
